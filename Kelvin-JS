@@ -1,0 +1,17 @@
+//Variable to hold Kelvin value
+
+let kelvin = prompt('What is the Kelvin temp?');
+
+//Convert Kelvin to celsius
+
+let celsius = 273 - kelvin;
+
+//convert celsius to fahrenhiet
+
+let fahrenheit = celsius * (9/5) + 32;
+
+//round fahrenheit to a round number
+fahrenheit = Math.floor(fahrenheit);
+
+//logging of conversion
+console.log('The temperature is ' + fahrenheit + ' degrees fahrenheit');
