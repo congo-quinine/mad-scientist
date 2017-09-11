@@ -1,0 +1,25 @@
+//prompt for users name
+let myName = 'Rob';
+
+myName = myName.toLowerCase();
+
+
+//My current age
+let myAge = 28;
+
+//The first two human years of a dog's life count as 10.5 dog years each
+let earlyYears = 2;
+
+//Multiply myAge by earlyYears
+earlyYears = earlyYears * 10.5;
+
+//myAge minus 2
+let laterYears = myAge - 2;
+
+//Multiply the laterYears variable by 4 to calculate the number of dog years accounted for by your later years. 
+laterYears *= 4;
+
+//Add earlyYears and laterYears together
+let myAgeInDogYears = earlyYears + laterYears;
+
+console.log('MY name is ' + myName +'. I am ' + myAgeInDogYears + ' in dog years');
