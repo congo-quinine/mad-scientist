@@ -1,0 +1,94 @@
+1.
+Create a variable named input that is equal to any sentence or phrase. This variable will contain the text we will translate into whale language.
+Stuck? Get a hint
+2.
+We will also need an array of letters that we are going to look for in the input variable.
+
+Since whale language only contains vowels, create an array with every vowel inside of it and set it equal to a variable named vowels.
+Stuck? Get a hint
+3.
+Later, when we find a vowel in the input string, we will need somewhere to store it.
+
+Create a variable named resultArray and set it equal to an empty array: [].
+Stuck? Get a hint
+4.
+Now that we have an input sentence and the vowels we're looking for, we need to write logic that compares the input variable's text to the vowels array. Our goal is to find all the vowels in the input string.
+
+We can do this by going letter-by-letter, checking to see if the first letter of the input is a vowel, then if the second letter is a vowel, and so on.
+
+To do this, let's utilize a for loop to loop through every letter of the input string.
+
+Write a for loop that starts at let i = 0, stops at i < input.length, and iterates by i++.
+
+Recall that instead of i, you should choose a descriptive variable name such as inputIndex.
+Stuck? Get a hint
+5.
+Inside of the for loop you just wrote, write another for loop. This loop's purpose is to iterate through the vowels array. Each time the outer for loop runs, the inner for loop will run completely.
+
+This will enable us to check the first letter of input against all the vowels items, then the second letter of input against all the vowels items, etc.
+
+Since we have two for loops, set this for loop's iteration variable as j. Start at let j = 0, end at j < vowels.length, and increase by one each loop with j++.
+
+Again, you should choose a more descriptive variable name than j.
+Stuck? Get a hint
+6.
+Inside the second for loop's block, we can write the logic to compare the input letter to every letter in the vowels array.
+
+Write an if/else statement that checks if input[i] is equal to vowels[j]. If it is, then use .push() to add input[i] to the resultArray.
+
+This will only push the characters from input that are vowels to the resultArray.
+Stuck? Get a hint
+
+7.
+Now we need to double the es and the us that the program finds.
+
+In the first for loop, below the inner for loop's block, write an if/else if/else statement that checks if input[i] is equal to 'e'. If so, .push() input[i] to the resultArray.
+Stuck? Get a hint
+8.
+Repeat step 6, but this time with the letter u.
+
+Just like in step 6, we need to double a letter, but this time it should be the letter u.
+
+Modify the if statement to also push the letter u if it matches.
+Stuck? Get a hint
+
+9.
+At the bottom of the program, use console.log() to print the resultArray.
+Stuck? Get a hint
+10.
+Notice the output has commas between each letter. That's because we are printing an array.
+
+To put the array items together as a string, we can use this code:
+
+resultArray.join('').toUpperCase();
+Since resultArray is an array, we can make it back into a continuous string with .join('').
+
+Also, we think whales are pretty enthusiastic, so we also included the toUpperCase() function, which will take any string and make it uppercase.
+Stuck? Get a hint
+11.
+Run the program and sing your translation!
+
+To confirm, if you use the input: 'Turpentine and turtles', the whale version would read: 'UUEEIEEAUUEE'. Say that three times fast!
+
+
+
+
+let input = 'You loco ese';
+
+let vowles = ['a','e','i','o','u'];
+
+let resultsArray = [];
+
+for (let inputIndex = 0; inputIndex < input.length; inputIndex++){
+  if (input[inputIndex] === 'e'){
+    resultsArray.push(input[inputIndex]);
+  }else if (input[inputIndex] === 'u'){
+     resultsArray.push(input[inputIndex]);
+  }
+  for (let vowlesIndex = 0; vowlesIndex < vowles.length; vowlesIndex++){
+    if (input[inputIndex] === vowles[vowlesIndex]){
+      resultsArray.push(input[inputIndex]);
+    }
+  }
+}
+console.log(resultsArray.join('').toUpperCase());
