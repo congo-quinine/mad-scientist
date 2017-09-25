@@ -77,44 +77,57 @@ Stuck? Get a hint
 
 
 
-let menu = {
+const menu = {
   _courses: {
-    _appetizers: [],
-    _mains: [],
-    _desserts: []
-  },
-  get courses(){
-    return {appetizers: this._courses.appetizers,
-            mains:this._courses.mains,
-            desserts:this._courses.desserts
-     }
-  },
-  addDishToCourse(courseName,dishName,dishPrice){
-    const dish = {
-      name: '',
-      price: 0
-    }
-    this._courses[courseName].push(dish)
-  },
-  
+    	appetizers: [],
+    		mains: [],
+    			desserts: []
+  		},
   get appetizers (){
-    
+    return this.appetizers;
+	},
+  set appetizers(appIn){
+    this.appetizers = appIn;
+},
+    get mains (){
+    return this.mains;
+	},
+  set appetizers(mainIn){
+    this.main = mainIn;
+},
+    get appetizers (){
+    return this.dessert;
+	},
+  set appetizers(dessIn){
+    this.dessert = dessIn;
+},
+  get courses(){
+    return this._courses;
   },
-  set appetizers(appetizerIn){
-    
+  addDishToCourse(courseName, dishName, dishPrice){
+    const dish = {
+      name: dishName,
+      price: dishPrice
+    }
+    this._courses[courseName].push(dish);
   },
-  get mains(){
-    
+  getRandomDishFromCourse(courseName){
+    const rando = Math.floor(Math.random() * 3);
+    const dishes = courseName[rando];
   },
-  set mains(mainIn){
-    
-  },
-  get desserts(){
-    
-  },
-  set desserts(dessertIn){
-    
-  },
-}
+  generateRandomMeal(){
+    const appetizer = this.getRandomDishFromCourse('appetizers');
+    const mains =  this.getRandomDishFromCourse('mains');
+    const desserts =  this.getRandomDishFromCourse('desserts');
+    const totalPrice = appetizer.price + mains.price + desserts.price;
+
+    return `Your meal is ${appetizer.name}, ${main.name}, ... The price is $${totalPrice}.`;
+  }
+  
+}//End of object!
+
+
+menu.addDishToCourse('appetizers','fart soup', 99);
+console.log(menu._courses.appetizers);
 
 
